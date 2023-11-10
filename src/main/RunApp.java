@@ -13,6 +13,7 @@ public class RunApp {
 		// create jfrm
 		JFrame jfrm = new JFrame("Pokemon Companions");
 		jfrm.setSize(600, 800);
+		jfrm.setResizable(false);
 		jfrm.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
 		// set up panels
