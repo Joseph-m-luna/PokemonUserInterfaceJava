@@ -177,14 +177,19 @@ public class PokemonViewer {
 		jp.add(secondPokemonPanel);
 		jp.add(thirdPokemonPanel);
 
-		//adding actionListener for progress bars
+		//adding actionListener for friendship and level progress bars
 		feed1.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent ae){
 				friendshipBar1.setValue(friendshipBar1.getValue() + 10);
 
 				if(friendshipBar1.getValue() == 100){
 					feed1.setEnabled(false);
+
+					levelBar1.setValue(levelBar1.getValue() + 10);
+					//reset friendship progress bar to 0 once filled
+					friendshipBar1.setValue(0);
 				}
+				feed1.setEnabled(true);
 			}
 		});
 
