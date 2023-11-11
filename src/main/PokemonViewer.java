@@ -5,6 +5,8 @@ import java.io.PrintWriter;
 import java.io.UnsupportedEncodingException;
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class PokemonViewer {
 	String tabName;
@@ -174,6 +176,17 @@ public class PokemonViewer {
 		jp.add(firstPokemonPanel);
 		jp.add(secondPokemonPanel);
 		jp.add(thirdPokemonPanel);
+
+		//adding actionListener for progress bars
+		feed1.addActionListener(new ActionListener(){
+			public void actionPerformed(ActionEvent ae){
+				friendshipBar1.setValue(friendshipBar1.getValue() + 10);
+
+				if(friendshipBar1.getValue() == 100){
+					feed1.setEnabled(false);
+				}
+			}
+		});
 
 		return jp;
 	}
