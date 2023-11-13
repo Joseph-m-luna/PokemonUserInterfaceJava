@@ -37,6 +37,7 @@ public class PokemonViewer {
 		JLabel pokeImg1Label = new JLabel(pokeImg1);
 		// button for feeding pokemon
 		JButton feed1 = new JButton("Feed");
+		feed1.setEnabled(true);
 		// add both of these to left side panel
 		leftPanel1.add(pokeImg1Label, BorderLayout.CENTER); // centers image
 		leftPanel1.add(feed1, BorderLayout.SOUTH); // places button underneath image
@@ -85,6 +86,7 @@ public class PokemonViewer {
 		JLabel pokeImg2Label = new JLabel(pokeImg2);
 		// button for feeding pokemon
 		JButton feed2 = new JButton("Feed");
+		feed2.setEnabled(true);
 		// add both of these to left side panel
 		leftPanel2.add(pokeImg2Label, BorderLayout.CENTER); // centers image
 		leftPanel2.add(feed2, BorderLayout.SOUTH); // places button underneath image
@@ -133,6 +135,7 @@ public class PokemonViewer {
 		JLabel pokeImg3Label = new JLabel(pokeImg3);
 		// button for feeding pokemon
 		JButton feed3 = new JButton("Feed");
+		feed3.setEnabled(true);
 		// add both of these to left side panel
 		leftPanel3.add(pokeImg3Label, BorderLayout.CENTER); // centers image
 		leftPanel3.add(feed3, BorderLayout.SOUTH); // places button underneath image
@@ -177,19 +180,45 @@ public class PokemonViewer {
 		jp.add(secondPokemonPanel);
 		jp.add(thirdPokemonPanel);
 
-		//adding actionListener for friendship and level progress bars
-		feed1.addActionListener(new ActionListener(){
-			public void actionPerformed(ActionEvent ae){
-				friendshipBar1.setValue(friendshipBar1.getValue() + 10);
-
-				if(friendshipBar1.getValue() == 100){
+		// adding actionListener for first friendship and level progress bars
+		feed1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent ae) {
+				if (friendshipBar1.getValue() < 100) {
+					friendshipBar1.setValue(friendshipBar1.getValue() + 10);
+				} else if (friendshipBar1.getValue() == 100) {
 					feed1.setEnabled(false);
-
 					levelBar1.setValue(levelBar1.getValue() + 10);
-					//reset friendship progress bar to 0 once filled
+					// reset friendship progress bar to 0 once filled
 					friendshipBar1.setValue(0);
 				}
-				feed1.setEnabled(true);
+			}
+		});
+
+		// adding actionListener for second friendship and level progress bars
+		feed2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent ae) {
+				if (friendshipBar2.getValue() < 100) {
+					friendshipBar2.setValue(friendshipBar2.getValue() + 10);
+				} else if (friendshipBar2.getValue() == 100) {
+					feed2.setEnabled(false);
+					levelBar2.setValue(levelBar2.getValue() + 10);
+					// reset friendship progress bar to 0 once filled
+					friendshipBar2.setValue(0);
+				}
+			}
+		});
+
+		// adding actionListener for third friendship and level progress bars
+		feed3.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent ae) {
+				if (friendshipBar3.getValue() < 100) {
+					friendshipBar3.setValue(friendshipBar3.getValue() + 10);
+				} else if (friendshipBar3.getValue() == 100) {
+					feed3.setEnabled(false);
+					levelBar3.setValue(levelBar3.getValue() + 10);
+					// reset friendship progress bar to 0 once filled
+					friendshipBar3.setValue(0);
+				}
 			}
 		});
 
