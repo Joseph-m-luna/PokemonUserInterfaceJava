@@ -188,8 +188,10 @@ public class PokemonViewer {
 				} else if (friendshipBar1.getValue() == 100) {
 					feed1.setEnabled(false);
 					levelBar1.setValue(levelBar1.getValue() + 10);
+					level1.setText("Level: " + (levelBar1.getValue()/10));
 					// reset friendship progress bar to 0 once filled
 					friendshipBar1.setValue(0);
+					feed1.setEnabled(true);
 				}
 			}
 		});
@@ -204,6 +206,7 @@ public class PokemonViewer {
 					levelBar2.setValue(levelBar2.getValue() + 10);
 					// reset friendship progress bar to 0 once filled
 					friendshipBar2.setValue(0);
+					feed2.setEnabled(true);
 				}
 			}
 		});
@@ -218,6 +221,7 @@ public class PokemonViewer {
 					levelBar3.setValue(levelBar3.getValue() + 10);
 					// reset friendship progress bar to 0 once filled
 					friendshipBar3.setValue(0);
+					feed3.setEnabled(true);
 				}
 			}
 		});
