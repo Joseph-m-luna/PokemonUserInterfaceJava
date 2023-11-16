@@ -33,7 +33,7 @@ public class PokemonViewer {
 		// left side of first pokemon panel
 		JPanel leftPanel1 = new JPanel(new BorderLayout());
 		// image of pokemon
-		ImageIcon pokeImg1 = new ImageIcon(getClass().getResource("camera icon.png"));
+		ImageIcon pokeImg1 = new ImageIcon(getClass().getResource("bulbasaur.png"));
 		JLabel pokeImg1Label = new JLabel(pokeImg1);
 		// button for feeding pokemon
 		JButton feed1 = new JButton("Feed");
@@ -82,7 +82,7 @@ public class PokemonViewer {
 		// left side of second pokemon panel
 		JPanel leftPanel2 = new JPanel(new BorderLayout());
 		// image of pokemon
-		ImageIcon pokeImg2 = new ImageIcon(getClass().getResource("camera icon.png"));
+		ImageIcon pokeImg2 = new ImageIcon(getClass().getResource("charmander.png"));
 		JLabel pokeImg2Label = new JLabel(pokeImg2);
 		// button for feeding pokemon
 		JButton feed2 = new JButton("Feed");
@@ -131,7 +131,7 @@ public class PokemonViewer {
 		// left side of third pokemon panel
 		JPanel leftPanel3 = new JPanel(new BorderLayout());
 		// image of pokemon
-		ImageIcon pokeImg3 = new ImageIcon(getClass().getResource("camera icon.png"));
+		ImageIcon pokeImg3 = new ImageIcon(getClass().getResource("squirtle.png"));
 		JLabel pokeImg3Label = new JLabel(pokeImg3);
 		// button for feeding pokemon
 		JButton feed3 = new JButton("Feed");
