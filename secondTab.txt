@@ -5,7 +5,7 @@ ground
 0' 8"
 1.8lbs
 40
-10
+20
 Benjamin
 ditto
 #0132
@@ -13,12 +13,12 @@ normal
 1' 0"
 8.8lbs
 0
-60
+70
 King Louis XXIV
 jigglypuff
 #0039
 normal, fairy
 1' 8"
 12.1lbs
+10
 0
-60

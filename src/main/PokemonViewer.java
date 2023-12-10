@@ -43,26 +43,27 @@ public class PokemonViewer {
 		String savedContents;
 		tabName = name;
 		
-		try {
-			savedContents = Files.readString(Paths.get(tabName + ".txt"));
-			String lines[] = savedContents.split("\\r\\n");
-			for (int j = 0; j < 3; j++) {
-				int lineStart = j*8;
-					names[j] = lines[lineStart];
-					pokemons[j] = lines[lineStart+1];
-					nums[j] = lines[lineStart+2];
-					types[j] = lines[lineStart+3];
-					heights[j] = lines[lineStart+4];
-					weights[j] = lines[lineStart+5];
-					
-					//cast levels to int
-					levels[j] = Integer.parseInt(lines[lineStart+6]);
-					friendships[j] = Integer.parseInt(lines[lineStart+7]);
+		try (BufferedReader br = new BufferedReader(new FileReader(tabName + ".txt"))) {
+			String line;
+			int j = 0;
+		
+			while ((line = br.readLine()) != null && j < 3) {
+				names[j] = line;
+				pokemons[j] = br.readLine();
+				nums[j] = br.readLine();
+				types[j] = br.readLine();
+				heights[j] = br.readLine();
+				weights[j] = br.readLine();
+				
+				levels[j] = Integer.parseInt(br.readLine());
+				friendships[j] = Integer.parseInt(br.readLine());
+		
+				j++;
 			}
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-	}
+	}		
 
 	public JPanel getPanel() {
 		JPanel jp = new JPanel(new GridLayout(3, 0));
