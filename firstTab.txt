@@ -1,0 +1,24 @@
+Johnathan?
+bulbasaur
+#0001
+grass, poison
+2' 4"
+15.2lbs
+0
+30
+Jimothy Hendrix
+charmander
+#0004
+fire
+2' 0"
+18.7lbs
+0
+10
+A Real One
+squirtle
+#0007
+water
+1' 8"
+19.8lbs
+10
+30

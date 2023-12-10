@@ -8,20 +8,21 @@ import java.io.FileNotFoundException;
 import java.io.UnsupportedEncodingException;
 
 public class RunApp {
+	PokemonViewer firstViewer, secondViewer;
 
 	RunApp() throws FileNotFoundException, UnsupportedEncodingException {
 		// create jfrm
 		JFrame jfrm = new JFrame("Pokemon Companions");
 		jfrm.setSize(600, 800);
 		jfrm.setResizable(false);
-		jfrm.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		jfrm.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
 
 		// set up panels
 		JTabbedPane jtpane = new JTabbedPane();
 
 		// create panels factory
-		PokemonViewer firstViewer = new PokemonViewer("firstTab");
-		PokemonViewer secondViewer = new PokemonViewer("secondTab");
+		firstViewer = new PokemonViewer("firstTab");
+		secondViewer = new PokemonViewer("secondTab");
 
 		// add to tabbed pane
 		jtpane.addTab(firstViewer.getName(), null, firstViewer.getPanel(), "first panel of your pokemon");
@@ -32,6 +33,18 @@ public class RunApp {
 
 		// make jfrm visible
 		jfrm.setVisible(true);
+		
+		jfrm.addWindowListener(new WindowAdapter() {
+			public void windowClosing(WindowEvent e) {
+				exitProgram();
+			}
+		});
+	}
+	
+	public void exitProgram() {
+		firstViewer.saveData();
+		secondViewer.saveData();
+		System.exit(0);
 	}
 
 	public static void main(String args[]) {
