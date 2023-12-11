@@ -230,11 +230,12 @@ public class PokemonViewer {
 		jp.add(firstPokemonPanel);
 		jp.add(secondPokemonPanel);
 		jp.add(thirdPokemonPanel);
+
 		// Reset button for the first Pokemon
-		JPanel resetPanel = new JPanel(new FlowLayout());
-		JButton reset1 = new JButton("Reset");
-		resetPanel.add(reset1);
-		jp.add(resetPanel);
+		// JPanel resetPanel = new JPanel(new FlowLayout());
+		// JButton reset1 = new JButton("Reset");
+		// resetPanel.add(reset1);
+		// jp.add(resetPanel);
 
 		// adding actionListener for first friendship and level progress bars
 		feed1.addActionListener(new ActionListener() {
@@ -284,26 +285,26 @@ public class PokemonViewer {
 			}
 		});
 		// Adding ActionListener for reset buttons
-        reset1.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent ae) {
-                resetPokemon(0);
-           }
-        });
+        // reset1.addActionListener(new ActionListener() {
+        //     public void actionPerformed(ActionEvent ae) {
+        //         resetPokemon(0);
+        //    }
+        // });
 		
 		this.saveData();
 		
 		return jp;
 	}
 	// Method to reset Pokemon data
-    private void resetPokemon(int index) {
-        levelBar1.setValue(0);
-		levelBar2.setValue(0);
-		levelBar3.setValue(0);
-        friendshipBar1.setValue(0);
-		friendshipBar2.setValue(0);
-		friendshipBar3.setValue(0);
-        saveData();
-    }
+    // private void resetPokemon(int index) {
+    //     levelBar1.setValue(0);
+	// 	levelBar2.setValue(0);
+	// 	levelBar3.setValue(0);
+    //     friendshipBar1.setValue(0);
+	// 	friendshipBar2.setValue(0);
+	// 	friendshipBar3.setValue(0);
+    //     saveData();
+    // }
 
 	public void saveData() {
 		setData(7, Integer.toString(levelBar1.getValue()));
